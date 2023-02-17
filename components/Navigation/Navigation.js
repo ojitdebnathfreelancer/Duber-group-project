@@ -11,6 +11,9 @@ const Navigation = () => {
         <li>
           <Link href="/">Home</Link>
         </li>
+        <li>
+          <Link href="/">Contact</Link>
+        </li>
       </ul>
     </div>
   );
