@@ -16,7 +16,7 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className=" lg:max-w-6xl mx-auto flex justify-between mt-16">
+        <div className=" lg:max-w-7xl mx-auto flex justify-between mt-16">
           <div className="flex flex-col space-y-3">
             <h2 className="font-medium">Company</h2>
             <div className="flex flex-col space-y-3 text-sm dark:text-gray-400">
