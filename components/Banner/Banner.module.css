@@ -1,17 +1,3 @@
-.driveOrDeliver{
-    text-align: center;
-    color: #212121;
-    cursor: pointer;
-}
-
-.driveOrDeliver:hover{
-    color: #616161;
-}
-
-.driveOrDeliver:active{
-    border-bottom:2px solid black ;
-}
-
 .deliveringAnimationButton::before {
   content: "";
   position: absolute;
@@ -21,6 +7,7 @@
   bottom: 30px;
   left: 43px;
 }
+
 .deliveringAnimationButton::after {
   content: "";
   position: absolute;
@@ -45,6 +32,7 @@
   background: #cecdcd;
   bottom: 44px;
 }
+
 .ownRestaurantButtonAnimation::after {
   content: "";
   position: absolute;
@@ -61,4 +49,47 @@
   background: black;
 }
 
+@media only screen and (max-width: 1024px) {
+  .deliveringAnimationButton::before {
+    width: 295px;
+    left: 16px;
+  }
 
+  .deliveringAnimationButton::after {
+    left: 16px;
+  }
+
+  .deliveringAnimationButton:hover:after {
+    width: 295px;
+  }
+
+  .ownRestaurantButtonAnimation::before {
+    width: 300px;
+    bottom: 46px;
+  }
+
+  .ownRestaurantButtonAnimation::after {
+    left: 157px;
+    bottom: 46px;
+  }
+
+  .ownRestaurantButtonAnimation:hover:after {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .ownRestaurantButtonAnimation {
+    margin-top: 20px;
+    display: block;
+  }
+
+  .ownRestaurantButtonAnimation::before {
+    bottom: 38px;
+  }
+  
+  .ownRestaurantButtonAnimation::after {
+    left: 16px;
+    bottom: 38px;
+  }
+}
