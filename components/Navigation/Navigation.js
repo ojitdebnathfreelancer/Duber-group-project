@@ -3,7 +3,7 @@ import React, { useState } from "react";
 import { HiBars2 } from 'react-icons/hi2';
 import { RxCross2 } from 'react-icons/rx';
 import { BsGlobe2 } from 'react-icons/bs';
-import styles from '../../styles/Navigation.module.css';
+import styles from './Navigation.module.css';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
