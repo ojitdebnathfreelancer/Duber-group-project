@@ -6,6 +6,8 @@ import Image from "next/image";
 import Link from "next/link";
 import { TiLocationArrow } from "react-icons/ti"
 import { GrFormClose } from "react-icons/gr"
+import styles from "./Banner.module.css"
+
 
 const Banner = () => {
   const [tabChange, setTabChange] = useState("Drive or deliver")
@@ -20,11 +22,10 @@ const Banner = () => {
   };
   const destinationRef = useRef(null);
   const destinationOnButtonClick = () => {
-    locationRef.current.value = "";
+    destinationRef.current.value = "";
 
   };
 
-  console.log(location, location)
 
   const bannerBackgroundImage = {
     backgroundImage: `url(${(tabChange === "Drive or deliver" && "https://i.ibb.co/Qvtcrf3/ezgif-com-webp-to-jpg.jpg") ||
@@ -65,7 +66,8 @@ const Banner = () => {
     <div className="lg:w-[576px] w-full bg-white absolute top-16 2xl:left-[16%] xl:left-20 lg:left-18 pt-6">
       <div className="grid lg:grid-cols-3 md:grid-cols-5 grid-cols-3 lg:justify-items-center justify-items-start border-b border-b-gray-100 drop-shadow-sm px-6 pb-6">
         <div
-          className="text-center text-gray-900 hover:text-gray-600 cursor-pointer">
+          className={styles.driveOrDeliver}
+        >
           <div className="flex justify-center">
             <GiNetworkBars
               className="font-bold lg:text-2xl text-base mb-2 text-gray-900" />
@@ -79,7 +81,9 @@ const Banner = () => {
         </div>
 
         <div
-          className="text-center text-gray-900 hover:text-gray-600 cursor-pointer">
+          className={styles.driveOrDeliver}
+        // className="text-center text-gray-900 hover:text-gray-600 cursor-pointer"
+        >
           <div className="flex justify-center">
             <ImSpoonKnife className="font-bold lg:text-2xl text-base mb-2 text-gray-900" />
           </div>
@@ -89,7 +93,9 @@ const Banner = () => {
         </div>
 
         <div
-          className="text-center text-gray-900 hover:text-gray-600 cursor-pointer">
+          className={styles.driveOrDeliver}
+        // className="text-center text-gray-900 hover:text-gray-600 cursor-pointer"
+        >
           <div className="flex justify-center">
             <AiOutlineCar className="font-bold lg:text-2xl text-base mb-2 text-gray-900" />
           </div>
@@ -109,7 +115,7 @@ const Banner = () => {
               <button className="px-6 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 font-medium my-6">Sign up to drive</button>
             </div>
             <div className="mb-3">
-              <Link href="/">Learn more about driving and delivering</Link>
+              <Link href="/" className={styles.deliveringAnimationButton}>Learn more about driving and delivering</Link>
             </div>
           </div>
         </>
@@ -122,7 +128,7 @@ const Banner = () => {
             <p>Order delivery from restaurants you love.</p>
             <div className="mt-8 mb-4">
               <button className="px-6 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 font-medium mr-4">Order now</button>
-              <Link href="/">Own a restaurant? Partner with Uber Eats</Link>
+              <Link className={styles.ownRestaurantButtonAnimation} href="/">Own a restaurant? Partner with Uber Eats</Link>
             </div>
           </div>
         </>
@@ -164,11 +170,11 @@ const Banner = () => {
                 placeholder="Enter destination"
               />
               {
-                destination.length && 
-                  <GrFormClose
-                    onClick={destinationOnButtonClick}
-                    className="absolute right-2 top-3 text-2xl cursor-pointer text-gray-500 hover:text-gray-800" />
-          
+                destination.length > 0 &&
+                <GrFormClose
+                  onClick={destinationOnButtonClick}
+                  className="absolute right-2 top-3 text-2xl cursor-pointer text-gray-500 hover:text-gray-800" />
+
               }
             </div>
             <div className="mt-8">
