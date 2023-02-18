@@ -1,33 +1,79 @@
 
 import { BiGroup } from "react-icons/bi";
+import { ImFileText } from "react-icons/im";
+import { AiOutlineHome } from "react-icons/ai";
+import { BsArrowRightShort } from "react-icons/bs";
+import styles from './Info.module.css';
+import Link from "next/link";
 
 const Info = () => {
-  return <div className=" max-w-screen-xl mx-auto bg-red-300">
+  return (
+    <div className=" text-[#333333]">
 
-    {/* .............about info section ...............*/}
-    <div className=" grid lg:grid-cols-3 gap-2">
-      <div className='border p-3 w-96 mx-auto' >
-        <BiGroup className="my-2" size={30}></BiGroup>
-        <h3 className=' text-xl my-2'>About us</h3>
-        <p> Find out how we started, what drives us, and how we’re reimagining how the world moves.</p>
+      {/* .............about info section ...............*/}
+
+
+      <div className="max-w-screen-xl mx-auto grid lg:grid-cols-3 gap-3">
+        <div className=' p-3 lg:p-0 w-[376px] mx-auto' >
+          <BiGroup className="my-2" size={30}></BiGroup>
+          <h3 className=' text-xl my-4'>About us</h3>
+          <p className=" mb-10"> Find out how we started, what drives us, and how we’re reimagining how the world moves.</p>
+          <Link href='/' className=" border-b-2  border-[#b4b4b4]  hover:border-[#333333] py-1">Learn more about Duber</Link>
+
+        </div>
+        <div className=' p-3 lg:p-0 w-[376px] mx-auto'>
+          <ImFileText className="my-2" size={25}></ImFileText>
+          <h3 className=' text-xl my-4'>Newsroom</h3>
+          <p className=" mb-11"> See announcements about our latest releases, initiatives, and partnerships.</p>
+          <Link href='/' className="border-b-2 border-[#b4b4b4] hover:border-[#333333] py-1">Go to Newsroom</Link>
+        </div>
+        <div className=' p-3 lg:p-0 w-[376px] mx-auto'>
+          <AiOutlineHome className="my-2" size={30}></AiOutlineHome>
+          <h3 className=' text-xl my-4'>Global citizenship</h3>
+          <p className=" mb-10">Read about our commitment to making a positive impact in the cities we serve.</p>
+          <Link href='/' className=" border-b-2 border-[#b4b4b4] hover:border-[#333333] py-1">See our partnerships</Link>
+        </div>
+
 
       </div>
-      <div className='border p-3 w-96 mx-auto'>
-        <h3 className=' text-xl my-2'>Newsroom</h3>
-        <p> See announcements about our latest releases, initiatives, and partnerships.</p>
-      </div>
-      <div className='border p-3 w-96 mx-auto'>
-        <h3 className=' text-xl my-2'>Global citizenship</h3>
-        <p>Read about our commitment to making a positive impact in the cities we serve.</p>
-      </div>
 
+
+      <div className=" border  bg-[#f0f0f0] my-12 py-8 transparent">
+        <div className="max-w-screen-xl py-8 mx-auto">
+          <h2 className=" text-4xl font-bold pb-6 m-3">There’s more to love in the apps</h2>
+          <div className="flex justify-between">
+            <div id={styles.div1} className="flex justify-center items-center bg-[#ffffff] w-[598px] h-[218px] m-3">
+              <div className=" bg-black h-[150px] w-[150px] flex relative mr-6 justify-center items-center  text-white">
+                <div>
+                  <h2 className=" text-5xl">Duber</h2>
+                  <BsArrowRightShort className=" relative -left-2" size={60}></BsArrowRightShort>
+                </div>
+              </div>
+              <div>
+                <h2 className="text-[28px] mr-3 font-bold">Download the Driver app</h2>
+              </div>
+              <BsArrowRightShort id={styles.arrow1} className=" relative top-1 font-bold" size={35}></BsArrowRightShort>
+            </div>
+
+            <div id="div2" className="flex justify-center items-center bg-[#ffffff] w-[598px] h-[218px] m-3">
+              <div className=" bg-black h-[150px] w-[150px] flex relative mr-6 justify-center items-center  text-white">
+                <div>
+                  <h2 className=" text-5xl">Duber</h2>
+
+                </div>
+              </div>
+              <div>
+                <h2 className="text-[28px] mr-3 font-bold">Download the Duber app</h2>
+              </div>
+              <BsArrowRightShort id="arrow2" className=" hover:translate-x-2 transition duration-300 relative top-1 font-bold" size={35}></BsArrowRightShort>
+            </div>
+
+          </div>
+        </div>
+      </div>
 
     </div>
-    <div>
-
-    </div>
-
-  </div>;
+  );
 };
 
 export default Info;
