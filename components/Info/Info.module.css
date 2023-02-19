@@ -1,9 +1,56 @@
+#arrow1 {
+    transition: transform 400ms ease-in-out;
+
+}
+
 #div1:hover #arrow1 {
 
-    --tw-translate-x: 0.5rem
-        /* 8px */
-    ;
-    transform: translate(var(--tw-translate-x), var(--tw-translate-y)) rotate(var(--tw-rotate)) skewX(var(--tw-skew-x)) skewY(var(--tw-skew-y)) scaleX(var(--tw-scale-x)) scaleY(var(--tw-scale-y));
+    transform: translate(15px);
 
-    transition-duration: 300ms;
+}
+
+#arrow2 {
+    transition: transform 400ms ease-in-out;
+
+}
+
+#div2:hover #arrow2 {
+
+    transform: translate(15px);
+
+}
+
+.effect {
+    position: relative;
+    transition: all ease-in 0.4s;
+
+}
+
+.effect::after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    left: 0;
+    bottom: 1%;
+    background-color: #b4b4b4;
+
+
+}
+
+.effect::before {
+    content: '';
+    position: absolute;
+    width: 0%;
+    height: 1px;
+    left: 0;
+    bottom: 0;
+    background-color: black;
+    transition: all ease-in 0.4s;
+}
+
+.effect:hover.effect::before {
+    width: 100%;
+    z-index: 99;
+
 }
