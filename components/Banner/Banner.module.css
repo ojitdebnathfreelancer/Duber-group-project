@@ -1,0 +1,95 @@
+.deliveringAnimationButton::before {
+  content: "";
+  position: absolute;
+  width: 52%;
+  height: 1px;
+  background: #cecdcd;
+  bottom: 30px;
+  left: 43px;
+}
+
+.deliveringAnimationButton::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: #cecdcd;
+  bottom: 30px;
+  left: 43px;
+  transition: 0.4s;
+}
+
+.deliveringAnimationButton:hover:after {
+  width: 52%;
+  background: black;
+}
+
+.ownRestaurantButtonAnimation::before {
+  content: "";
+  position: absolute;
+  width: 52%;
+  height: 1px;
+  background: #cecdcd;
+  bottom: 44px;
+}
+
+.ownRestaurantButtonAnimation::after {
+  content: "";
+  position: absolute;
+  width: 0;
+  height: 1px;
+  background: #cecdcd;
+  bottom: 44px;
+  transition: 0.4s;
+  left: 184px;
+}
+
+.ownRestaurantButtonAnimation:hover:after {
+  width: 52%;
+  background: black;
+}
+
+@media only screen and (max-width: 1024px) {
+  .deliveringAnimationButton::before {
+    width: 295px;
+    left: 16px;
+  }
+
+  .deliveringAnimationButton::after {
+    left: 16px;
+  }
+
+  .deliveringAnimationButton:hover:after {
+    width: 295px;
+  }
+
+  .ownRestaurantButtonAnimation::before {
+    width: 300px;
+    bottom: 46px;
+  }
+
+  .ownRestaurantButtonAnimation::after {
+    left: 157px;
+    bottom: 46px;
+  }
+
+  .ownRestaurantButtonAnimation:hover:after {
+    width: 300px;
+  }
+}
+
+@media only screen and (max-width: 639px) {
+  .ownRestaurantButtonAnimation {
+    margin-top: 20px;
+    display: block;
+  }
+
+  .ownRestaurantButtonAnimation::before {
+    bottom: 38px;
+  }
+  
+  .ownRestaurantButtonAnimation::after {
+    left: 16px;
+    bottom: 38px;
+  }
+}
