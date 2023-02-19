@@ -1,8 +1,9 @@
 import Link from "next/link";
 import React from "react";
-import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineYoutube } from "react-icons/ai";
+import { AiOutlineApple, AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineYoutube } from "react-icons/ai";
 import { BsGlobe2 } from "react-icons/bs";
-import { CiLocationArrow1, CiTwitter } from "react-icons/ci";
+import { CiTwitter } from "react-icons/ci";
+import { IoLocateSharp, IoLogoGooglePlaystore } from "react-icons/io5"
 
 const Footer = () => {
   return (
@@ -74,10 +75,26 @@ const Footer = () => {
             </span>
 
             <span className=" flex items-center mt-[52px] gap-2">
-              <CiLocationArrow1></CiLocationArrow1>
+              <IoLocateSharp></IoLocateSharp>
               <span>San Francisco Bay Area</span>
             </span>
           </div>
+          {/* <div className=" flex gap-3  mt-[35px]">
+            <button className=" flex items-center border-2 rounded-md">
+              <IoLogoGooglePlaystore className=" h-6 w-6"></IoLogoGooglePlaystore>
+              <span>
+                <h1 className=" text-xs">Get it on</h1>
+                <h1>Google Play</h1>
+              </span>
+            </button>
+            <button className=" flex items-center border-2 rounded-md">
+              <AiOutlineApple className=" h-6 w-6"></AiOutlineApple>
+              <span>
+                <h1 className=" text-xs">Download from</h1>
+                <h1>App store</h1>
+              </span>
+            </button>
+          </div> */}
         </div>
         <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto flex flex-wrap items-center justify-center space-y-4 sm:justify-between sm:space-y-0 mt-20 text-xs">
           <div className="flex flex-row pr-3 space-x-4 sm:space-x-8">
