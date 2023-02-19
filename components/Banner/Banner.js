@@ -14,7 +14,6 @@ const Banner = () => {
   useEffect(() => {
     console.log(tabChange);
   }, [tabChange]);
-  
   return (
     <div className="relative lg:h-[667px] md:h-[336px] h-[270px]">
       <div className="hidden lg:block">
@@ -106,9 +105,9 @@ const Banner = () => {
         <div className="grid lg:grid-cols-3 md:grid-cols-5 grid-cols-3 lg:justify-items-center justify-items-start border-b border-b-gray-100 drop-shadow-sm px-6 pb-6">
           <div
             onClick={() => setTabChange("Drive or deliver")}
-            className="md:w-auto w-full"
+            className={`${tabChange === "Drive or deliver" ? styles.driveOrDeliverAnimation : "border-b-0"} md:w-auto w-full`}
           >
-            <p className="font-medium lg:text-base text-sm leading-5 md:w-[65px] w-full flex justify-center items-center flex-col cursor-pointer text-gray-900 hover:text-gray-600 text-center">
+            <p className="font-medium lg:text-base text-sm leading-5 w-[65px] flex justify-center items-center flex-col cursor-pointer text-gray-900 hover:text-gray-600 text-center">
               <GiNetworkBars className="font-bold lg:text-2xl text-base mb-2 text-gray-900"></GiNetworkBars>
               Drive or deliver
             </p>
@@ -116,7 +115,7 @@ const Banner = () => {
 
           <div
             onClick={() => setTabChange("Eat")}
-            className="md:w-auto w-full"
+            className={`${tabChange === "Eat" ? styles.eatBottomAnimation : "border-b-0"} md:w-auto w-full`}
           >
             <p className="font-medium lg:text-base text-sm flex justify-center items-center flex-col cursor-pointer text-gray-900 hover:text-gray-600">
               <ImSpoonKnife className="font-bold lg:text-2xl text-base mb-2 text-gray-900"></ImSpoonKnife>
@@ -124,9 +123,9 @@ const Banner = () => {
             </p>
           </div>
 
-          <div 
-          onClick={() => setTabChange("Ride")}
-          className="md:w-auto w-full"
+          <div
+            onClick={() => setTabChange("Ride")}
+            className={`${tabChange === "Ride" ? styles.rideBottomAnimation : "border-b-0"} md:w-auto w-full`}
           >
             <p className="font-medium lg:text-base text-sm flex justify-center items-center flex-col cursor-pointer text-gray-900 hover:text-gray-600">
               <AiOutlineCar className="font-bold lg:text-2xl text-base mb-2 text-gray-900 "></AiOutlineCar>
