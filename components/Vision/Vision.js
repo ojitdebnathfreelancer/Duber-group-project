@@ -1,7 +1,7 @@
 import React from "react";
 
 const Vision = () => {
-  return <div>Vision(Focused on safety, wherever you go) part goes here</div>;
+  return <div></div>;
 };
 
 export default Vision;
