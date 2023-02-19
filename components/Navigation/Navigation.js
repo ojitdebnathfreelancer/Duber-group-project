@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import { HiBars2 } from 'react-icons/hi2';
 import { RxCross2 } from 'react-icons/rx';
 import { BsGlobe2 } from 'react-icons/bs';
+import styles from './Navigation.module.css';
 
 const Navigation = () => {
   const [open, setOpen] = useState(false);
@@ -20,7 +21,7 @@ const Navigation = () => {
   </>
 
   return (
-    <div className="bg-black relative">
+    <div className={`${styles.mainNav}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center px-2 text-white h-[70px]">
         <div className="flex items-center">
           <div className="text-[24px] font-semibold mr-6">
@@ -36,7 +37,7 @@ const Navigation = () => {
             EN
           </button>
           <button className="lg:mr-5 mr-4 text-[16px] lg:block hidden hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">Products</button>
-          <button className="lg:mr-5 mr-4 text-[16px] hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">Login</button>
+          <button className="lg:mr-5 mr-2 text-[16px] hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">Login</button>
           <button className="lg:mr-5 mr-4 bg-white text-black rounded-2xl lg:px-3 px-2 py-1 font-semibold duration-150">Sign Up</button>
           <button onClick={() => setOpen(!open)} className='hover:bg-[#333333] p-2 rounded-[50%] duration-150 text-white font-bold lg:hidden block'>
             {
@@ -47,7 +48,7 @@ const Navigation = () => {
             }
           </button>
         </div>
-        <div className={`w-full px-5 duration-200 opacity-0 h-[100vh] absolute top-[100%] right-0 bg-white text-black font-semibold text-[22px] ${open ? 'block opacity-100' : 'hidden'}`}>
+        <div className={` ${styles.phoneNav} ${open ? styles.phoneDisplay : ''}`} >
           <ul>
             {menuItems}
           </ul>
