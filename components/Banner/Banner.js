@@ -11,23 +11,7 @@ import RideTab from "./RideTab";
 const Banner = () => {
   const [tabChange, setTabChange] = useState("Drive or deliver")
 
-  const bannerBackgroundImage = {
-    backgroundImage: `url(${(tabChange === "Drive or deliver" && "https://i.ibb.co/Qvtcrf3/ezgif-com-webp-to-jpg.jpg") ||
-      (tabChange === "Eat" && "https://i.ibb.co/wCx1tY2/ezgif-com-webp-to-jpg-1.jpg") ||
-      (tabChange === "Ride" && "https://i.ibb.co/VNhBCZG/ezgif-com-webp-to-jpg-2.jpg")
-
-      })`,
-    width: "100%",
-    height: "100vh",
-    backgroundPosition: "center",
-    backgroundSize: "cover",
-    backgroundRepeat: "no-repeat",
-    padding: "71px 0px"
-  };
-
-
   return <div className="relative">
-
     <div className={`${(tabChange === "Eat" || tabChange === "Ride") ? "hidden" : "block"}`}>
       <img
         className=" h-[667px] w-full object-cover"
