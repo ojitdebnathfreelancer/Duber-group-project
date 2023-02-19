@@ -2,7 +2,7 @@ import Link from "next/link";
 import React from "react";
 import { AiOutlineFacebook, AiOutlineInstagram, AiOutlineLinkedin, AiOutlineYoutube } from "react-icons/ai";
 import { BsGlobe2 } from "react-icons/bs";
-import { CiLocationOn, CiTwitter } from "react-icons/ci";
+import { CiLocationArrow1, CiTwitter } from "react-icons/ci";
 
 const Footer = () => {
   return (
@@ -69,11 +69,13 @@ const Footer = () => {
           <div className=" flex gap-10">
             <span className="flex items-center mt-[52px] gap-2">
               <BsGlobe2></BsGlobe2>
-              English
+              <span>English</span>
+
             </span>
 
             <span className=" flex items-center mt-[52px] gap-2">
-              <CiLocationOn></CiLocationOn> San Francisco Bay Area
+              <CiLocationArrow1></CiLocationArrow1>
+              <span>San Francisco Bay Area</span>
             </span>
           </div>
         </div>
