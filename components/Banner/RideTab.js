@@ -1,6 +1,7 @@
 import { TiLocationArrow } from "react-icons/ti"
 import { GrFormClose } from "react-icons/gr"
 import { useRef, useState } from "react";
+import styles from "./Banner.module.css"
 
 const RideTab = () => {
     const [location, setLocation] = useState("")
@@ -24,7 +25,7 @@ const RideTab = () => {
             <div className="relative">
                 <input
                     onChange={(e) => setLocation(e.target.value)}
-                    className="w-full py-3.5 pl-10 pr-6 outline-none bg-gray-100"
+                    className={`w-full py-3.5 pl-10 pr-6 outline-none bg-gray-100`}
                     type="text"
                     name="location"
                     value={location}
@@ -32,6 +33,7 @@ const RideTab = () => {
                     id=""
                     placeholder="Enter pickup location"
                 />
+                <span className={styles.pickupLocation}></span>
                 {
                     location.length ? <>
                         <GrFormClose
@@ -52,6 +54,7 @@ const RideTab = () => {
                     id=""
                     placeholder="Enter destination"
                 />
+                <span className={styles.destinationInput}></span>
                 {
                     destination.length > 0 &&
                     <GrFormClose
@@ -60,9 +63,9 @@ const RideTab = () => {
 
                 }
             </div>
-            <div className="mt-8">
-                <button className="px-6 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 font-medium my-6 mr-4">Request now</button>
-                <button className="px-6 py-3 rounded-lg bg-gray-100 text-black hover:bg-gray-200 font-medium my-6 mr-4">Schedule for later</button>
+            <div className="lg:mt-8 mt-4">
+                <button className="px-8 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 font-medium my-6 mr-4 lg:inline block md:w-auto w-full">Request now</button>
+                <button className="px-6 py-3 rounded-lg bg-gray-100 text-black hover:bg-gray-200 font-medium my-6 mr-4 lg:inline block md:w-auto w-full">Schedule for later</button>
             </div>
         </div>
     );
