@@ -10,7 +10,7 @@ const DriveOrDeliver = () => {
                 <button className="px-8 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 font-medium my-6">Sign up to drive</button>
             </div>
             <div className="mb-3">
-                <Link href="/" className={styles.deliveringAnimationButton}>Learn more about driving and delivering</Link>
+                <Link href="/" className={`${styles.deliveringAnimationButton} md:text-base text-[15px]`}>Learn more about driving and delivering</Link>
             </div>
         </div>
     );
