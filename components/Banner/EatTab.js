@@ -1,5 +1,5 @@
 import Link from "next/link";
-import styles from "./Banner.module.css"
+import styles from "./Banner.module.css";
 
 const EatTab = () => {
     return (
@@ -9,7 +9,7 @@ const EatTab = () => {
             <div className="mt-8 mb-4">
                 <button className="px-8 py-3 rounded-lg bg-gray-900 text-white hover:bg-gray-800 font-medium mr-4">Order now</button>
                 <div className="sm:inline block">
-                    <Link className={`${styles.ownRestaurantButtonAnimation} md:text-base text-[15px]`} href="/">Own a restaurant? Partner with Uber Eats</Link>
+                    <Link className={styles.ownRestaurantButtonAnimation} href="/">Own a restaurant? Partner with Uber Eats</Link>
                 </div>
             </div>
         </div>
