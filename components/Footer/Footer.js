@@ -15,7 +15,8 @@ const Footer = () => {
   return (
     <>
       <div className="bg-black relative py-24 text-white">
-        <div className=" max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto gap-4">
+        <div className="px-3 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto gap-4">
+          {/* title */}
           <div className="lg:flex justify-between ">
             <div>
               <h1 className="text-[24px] font-semibold mr-6 mb-4">Duber</h1>
@@ -28,7 +29,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-between mt-16">
+        {/* about */}
+        <div className="px-3 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-between mt-16">
           <div className="flex flex-col space-y-3">
             <h2 className="font-medium">Company</h2>
             <div className="flex flex-col space-y-3 text-sm dark:text-gray-400">
@@ -67,7 +69,8 @@ const Footer = () => {
             </div>
           </div>
         </div>
-        <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 ">
+        {/* social link */}
+        <div className="px-3 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-1 lg:grid-cols-3 ">
           <div className=" flex gap-16 mt-14">
             <AiOutlineFacebook></AiOutlineFacebook>
             <CiTwitter></CiTwitter>
@@ -103,7 +106,8 @@ const Footer = () => {
             </button>
           </div> */}
         </div>
-        <div className="max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto flex flex-wrap items-center justify-center space-y-4 sm:justify-between sm:space-y-0 mt-20 text-xs">
+        {/* Rights */}
+        <div className="px-3 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto flex flex-wrap items-center justify-center space-y-4 sm:justify-between sm:space-y-0 mt-20 text-xs">
           <div className="flex flex-row pr-3 space-x-4 sm:space-x-8">
             <h1>©2023 All Rights Reserved to Coders Team.</h1>
           </div>
