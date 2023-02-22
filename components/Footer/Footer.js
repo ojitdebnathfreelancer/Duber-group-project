@@ -24,12 +24,12 @@ const Footer = () => {
             </div>
             <div>
               <h1 className="sm:mb-2">
-                Bangladesh Ridesharing Releted Information.
+                Bangladesh Ridesharing Releted Info.
               </h1>
             </div>
           </div>
         </div>
-        {/* about */}
+        {/* about company */}
         <div className="px-3 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto grid sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10 justify-between mt-16">
           <div className="flex flex-col space-y-3">
             <h2 className="font-medium">Company</h2>
