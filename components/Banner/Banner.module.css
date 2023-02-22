@@ -16,7 +16,7 @@
   background: #cecdcd;
   bottom: 30px;
   left: 43px;
-  transition: 0.4s;
+  transition: all ease-in 0.4s;
 }
 
 .deliveringAnimationButton:hover:after {
@@ -40,42 +40,13 @@
   height: 1px;
   background: #cecdcd;
   bottom: 44px;
-  transition: 0.4s;
-  left: 184px;
+  transition: all ease-in 0.4s;
+  left: 200px;
 }
 
 .ownRestaurantButtonAnimation:hover:after {
   width: 52%;
   background: black;
-}
-
-@media only screen and (max-width: 1024px) {
-  .deliveringAnimationButton::before {
-    width: 295px;
-    left: 16px;
-  }
-
-  .deliveringAnimationButton::after {
-    left: 16px;
-  }
-
-  .deliveringAnimationButton:hover:after {
-    width: 295px;
-  }
-
-  .ownRestaurantButtonAnimation::before {
-    width: 300px;
-    bottom: 46px;
-  }
-
-  .ownRestaurantButtonAnimation::after {
-    left: 157px;
-    bottom: 46px;
-  }
-
-  .ownRestaurantButtonAnimation:hover:after {
-    width: 300px;
-  }
 }
 
 .pickupLocation::after {
@@ -142,6 +113,35 @@
   right: 73px;
 }
 
+@media only screen and (max-width: 1024px) {
+  .deliveringAnimationButton::before {
+    width: 295px;
+    left: 16px;
+  }
+
+  .deliveringAnimationButton::after {
+    left: 16px;
+  }
+
+  .deliveringAnimationButton:hover:after {
+    width: 295px;
+  }
+
+  .ownRestaurantButtonAnimation::before {
+    width: 300px;
+    bottom: 46px;
+  }
+
+  .ownRestaurantButtonAnimation::after {
+    left: 157px;
+    bottom: 46px;
+  }
+
+  .ownRestaurantButtonAnimation:hover:after {
+    width: 300px;
+  }
+}
+
 @media only screen and (max-width: 768px) {
   .driveOrDeliverAnimation::after {
     left: 21px;
@@ -155,6 +155,21 @@
 }
 
 @media only screen and (max-width: 639px) {
+  .deliveringAnimationButton::before {
+    width: 272px;
+  }
+
+  .deliveringAnimationButton:hover:after {
+    width: 272px;
+  }
+
+  .ownRestaurantButtonAnimation::before {
+    width: 278px;
+  }
+  .ownRestaurantButtonAnimation:hover:after {
+    width: 278px;
+  }
+
   .ownRestaurantButtonAnimation {
     margin-top: 20px;
     display: block;

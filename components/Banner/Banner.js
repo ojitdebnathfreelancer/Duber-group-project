@@ -66,7 +66,7 @@ const Banner = () => {
         >
           <Image
             fill
-            className="h-[667px] w-full object-cover"
+            className="h-[667px] w-full object-[revert]"
             src="https://i.ibb.co/Qvtcrf3/ezgif-com-webp-to-jpg.jpg"
             alt="Image"
           />
