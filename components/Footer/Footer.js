@@ -24,7 +24,7 @@ const Footer = () => {
             </div>
             <div>
               <h1 className="sm:mb-2">
-                Bangladesh Ridesharing Releted Information.
+                Bangladesh Ridesharing Releted Info.
               </h1>
             </div>
           </div>
