@@ -14,7 +14,7 @@ import { IoLocateSharp, IoLogoGooglePlaystore } from "react-icons/io5";
 const Footer = () => {
   return (
     <>
-      <div className="bg-black relative py-24 text-white">
+      <div className="bg-[#060047] relative py-24 text-white">
         <div className="px-3 max-w-xs sm:max-w-sm md:max-w-md lg:max-w-7xl mx-auto gap-4">
           {/* title */}
           <div className="lg:flex justify-between ">
