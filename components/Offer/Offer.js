@@ -12,7 +12,7 @@ const Offer = () => {
   };
 
   return (
-    <div style={offerBackgroundImage} className="lg:py-[64px] py-[40px]">
+    <div style={offerBackgroundImage} className="lg:py-[64px] py-[40px] lg:px-1 px-3">
       <div className="max-w-screen-xl mx-auto ">
         <h2 className="lg:text-4xl text-[28px] font-bold leading-[44px] lg:pb-5 pb-2">
           Duber for Business
