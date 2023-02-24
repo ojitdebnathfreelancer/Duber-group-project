@@ -41,9 +41,9 @@ const Navigation = () => {
     <div className={`${styles.mainNav}`}>
       <div className="max-w-7xl mx-auto flex justify-between items-center px-2 text-white h-[70px]">
         <div className="flex items-center">
-          <div className="text-[24px] font-semibold mr-6">
-            <Link href="/">Duber</Link>
-          </div>
+
+          <Link className="text-[24px] font-semibold mr-6" href="/">Duber</Link>
+
           <ul className="lg:flex hidden items-center text-[16px]">
             {menuItems}
           </ul>
@@ -56,12 +56,16 @@ const Navigation = () => {
           <button className="lg:mr-5 mr-4 text-[16px] lg:block hidden hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
             Products
           </button>
-          <button className="lg:mr-5 mr-2 text-[16px] hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
-            Login
-          </button>
-          <button className="lg:mr-5 mr-4 bg-white text-black rounded-2xl lg:px-3 px-2 py-1 font-semibold duration-150">
-            Sign Up
-          </button>
+          <Link href='/signin/signin'>
+            <button className="lg:mr-5 mr-2 text-[16px] hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
+              Login
+            </button>
+          </Link>
+          <Link href='/signinAs'>
+            <button className="lg:mr-5 mr-4 bg-white text-black rounded-2xl lg:px-3 px-2 py-1 font-semibold duration-150">
+              Sign Up
+            </button>
+          </Link>
           <button
             onClick={() => setOpen(!open)}
             className="hover:bg-[#333333] p-2 rounded-[50%] duration-150 text-white font-bold lg:hidden block"

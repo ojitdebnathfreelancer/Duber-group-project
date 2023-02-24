@@ -6,7 +6,7 @@ const Signin = () => {
 
   return (
     <div className="md:w-[360px] w-full mx-auto px-3 py-4">
-      <h2 className="text-[24px] leading-[30px]">What's your phone number or email?</h2>
+      <h2 className="text-[24px] leading-[30px]">What is your phone number or email?</h2>
       <div className="py-3">
         <input
           onChange={(e) => setEmailOrNumber(e.target.value)}
