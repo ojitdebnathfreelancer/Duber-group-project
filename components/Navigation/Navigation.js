@@ -61,7 +61,7 @@ const Navigation = () => {
               Login
             </button>
           </Link>
-          <Link href='/signinAs'>
+          <Link href='/signup/signup'>
             <button className="lg:mr-5 mr-4 bg-white text-black rounded-2xl lg:px-3 px-2 py-1 font-semibold duration-150">
               Sign Up
             </button>
