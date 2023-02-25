@@ -9,10 +9,12 @@ import Link from "next/link";
 const Info = () => {
   return (
     <div className=" text-[#333333] xl:pt-24 ">
+
+
       {/* .............about info section ...............*/}
 
       <div className="max-w-screen-xl mx-auto grid lg:grid-cols-3 gap-3 xl:pb-16 ">
-        <div className=" p-3 lg:p-0 w-[376px] mr-auto">
+        <div className=" p-3 lg:p-0 w-[376px] mx-auto">
           <BiGroup className="my-2" size={30}></BiGroup>
           <h3 className=" text-xl my-4">About us</h3>
           <p className=" mb-10">
@@ -37,7 +39,7 @@ const Info = () => {
           </Link>
         </div>
 
-        <div className=" p-3 lg:p-0 w-[376px] ml-auto">
+        <div className=" p-3 lg:p-0 w-[376px] mx-auto">
           <AiOutlineHome className="my-2" size={30}></AiOutlineHome>
           <h3 className=" text-xl my-4">Global citizenship</h3>
           <p className=" mb-10">
@@ -50,7 +52,7 @@ const Info = () => {
         </div>
       </div>
 
-      <div className=" border bg-[#f0f0f0] my-12 py-8 transparent">
+      <div className=" border bg-[#f0f0f0] my-12 py-8 px-2 transparent">
         <div className="max-w-screen-xl py-8 mx-auto">
           <h2 className=" text-4xl font-bold pb-6 my-3">
             There’s more to love in the apps
