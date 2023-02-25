@@ -1,8 +1,17 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 
 const Signin = () => {
   const [emailOrNumber, setEmailOrNumber] = useState("")
+
+  const router = useRouter()
+
+  const handleRouting = (e) => {
+    e.preventDefault()
+    router.push("/signup/emailPass")
+  }
+
 
   return (
     <div className="md:w-[360px] w-full mx-auto px-3 py-4">
@@ -20,6 +29,7 @@ const Signin = () => {
       </div>
       <div>
         <button
+          onClick={handleRouting}
           disabled={!emailOrNumber.length}
           className={`${(!emailOrNumber.length) ? "bg-gray-200 bg-opacity-50 hover:bg-gray-800 text-gray-400 cursor-not-allowed" : "bg-gray-800 text-white hover:bg-gray-700"} w-full py-3 px-4 rounded-lg transition ease-in-out duration-500`}>Continue</button>
       </div>
