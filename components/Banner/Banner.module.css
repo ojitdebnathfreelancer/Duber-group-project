@@ -146,9 +146,11 @@
   .driveOrDeliverAnimation::after {
     left: 21px;
   }
+
   .eatBottomAnimation::after {
     left: 144px;
   }
+
   .rideBottomAnimation::after {
     right: 402px;
   }
@@ -166,6 +168,7 @@
   .ownRestaurantButtonAnimation::before {
     width: 278px;
   }
+
   .ownRestaurantButtonAnimation:hover:after {
     width: 278px;
   }
@@ -189,9 +192,11 @@
   .driveOrDeliverAnimation::after {
     left: 18px;
   }
+
   .eatBottomAnimation::after {
     left: 173px;
   }
+
   .rideBottomAnimation::after {
     right: 46px;
   }
@@ -201,6 +206,7 @@
   .eatBottomAnimation::after {
     left: 163px;
   }
+
   .rideBottomAnimation::after {
     right: 42px;
   }
@@ -210,6 +216,7 @@
   .eatBottomAnimation::after {
     left: 128px;
   }
+
   .rideBottomAnimation::after {
     right: 31px;
   }
