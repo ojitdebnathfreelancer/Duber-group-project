@@ -1,3 +1,4 @@
+import { useRouter } from "next/router";
 import React, { useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
@@ -34,6 +35,16 @@ const EmailPass = () => {
       oneLetter
     })
   }
+
+
+  const router = useRouter()
+
+  const handlePreview = (e) => {
+    e.preventDefault()
+    router.push("/signup/roleSelection")
+  }
+
+
 
 
   return (
@@ -125,13 +136,15 @@ const EmailPass = () => {
 
         </div>
         <div className="flex justify-between items-center md:mt-10 mt-24">
-          <div className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:cursor-pointer hover:bg-gray-300 hover:bg-opacity-80 transition ease-in-out duration-500 ">
+          <div
+            onClick={handlePreview}
+            className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:cursor-pointer hover:bg-gray-300 hover:bg-opacity-80 transition ease-in-out duration-500 ">
             <BiLeftArrowAlt className="text-3xl" />
           </div>
           <div className="w-[100px] h-12 px-4 rounded-full bg-gray-900 flex items-center justify-center hover:cursor-pointer hover:bg-gray-900 hover:bg-opacity-90 text-white transition ease-in-out duration-500">
-            <button className="flex items-center justify-center gap-2">
-              <span>Next</span>
-              <BiRightArrowAlt className="text-3xl" />
+            <button type="submit" className="flex items-center justify-center gap-2">
+              <span>Submit</span>
+              {/* <BiRightArrowAlt className="text-3xl" /> */}
             </button>
           </div>
         </div>

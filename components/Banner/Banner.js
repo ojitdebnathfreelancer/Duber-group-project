@@ -14,6 +14,8 @@ const Banner = () => {
   useEffect(() => {
     console.log(tabChange);
   }, [tabChange]);
+
+  
   return (
     <div className="relative lg:h-[667px] md:h-[336px] h-[270px]">
       <div className="hidden lg:block">
