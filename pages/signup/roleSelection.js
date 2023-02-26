@@ -1,7 +1,11 @@
+
+import { Role } from "@/redux/slies/signupSlice";
 import { useRouter } from "next/router";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import { useDispatch } from "react-redux";
 
 const roleSelection = () => {
+    const dispatch = useDispatch();
     const router = useRouter()
 
     const handlePreview = (e) => {
@@ -23,12 +27,12 @@ const roleSelection = () => {
                     <div className="py-6">
                         <div className="flex items-center gap-3">
                             <div className="flex gap-2 items-center">
-                                <input type="radio" name="role" value="company" />
+                                <input onClick={(e) => dispatch(Role(e.target.value))} type="radio" name="role" value="company" />
                                 <label>Company</label>
                             </div>
 
                             <div className="flex gap-2 items-center">
-                                <input type="radio" name="role" value="passenger" />
+                                <input onClick={(e) => dispatch(Role(e.target.value))} type="radio" name="role" value="passenger" />
                                 <label>Passenger</label>
                             </div>
                         </div>
