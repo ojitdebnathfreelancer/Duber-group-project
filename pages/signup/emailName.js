@@ -6,7 +6,7 @@ const EmailName = () => {
     <div className="md:w-[360px] lg:h-[90vh] h-auto mx-auto w-full flex justify-center items-center px-3 md:pt-0 pt-2">
       <div>
         <div>
-          <h2 className="text-[24px] leading-[30px] py-2">What's your name</h2>
+          <h2 className="text-[24px] leading-[30px] py-2">What is your name</h2>
           <p>Let us know how to address you properly</p>
         </div>
         <div className="py-8">
