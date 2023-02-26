@@ -122,7 +122,7 @@ const Products = () => {
                     {/* <!-- Card Starts Here --> */}
                     <div className="max-w-md  rounded-xl bg-white shadow-lg">
                         <div className="p-8">
-                            <img src="https://i.ibb.co/RgnhN32/undraw-compose-music-ovo2.png" alt="" />
+                            <img src="https://i.ibb.co/njWZK4f/gleb-lukomets-FYs-PAVwxekc-unsplash.jpg" alt="" />
                         </div>
 
                         <div className="flex flex-col items-center gap-6 p-8">
@@ -143,7 +143,7 @@ const Products = () => {
                     {/* <!-- Card Starts Here --> */}
                     <div className="max-w-md rounded-xl bg-white shadow-lg">
                         <div className="p-8">
-                            <img src="https://i.ibb.co/RgnhN32/undraw-compose-music-ovo2.png" alt="" />
+                            <img src="https://i.ibb.co/yfqjxyh/mark-chan-j876-KO2-OKI-unsplash.jpg" alt="" />
                         </div>
 
                         <div className="flex flex-col items-center gap-6 p-8">
@@ -164,7 +164,7 @@ const Products = () => {
                     {/* <!-- Card Starts Here --> */}
                     <div className="max-w-md rounded-xl bg-white shadow-lg">
                         <div className="p-8">
-                            <img src="https://i.ibb.co/RgnhN32/undraw-compose-music-ovo2.png" alt="" />
+                            <img src="https://i.ibb.co/njWZK4f/gleb-lukomets-FYs-PAVwxekc-unsplash.jpg" alt="" />
                         </div>
 
                         <div className="flex flex-col items-center gap-6 p-8">
