@@ -1,5 +1,5 @@
 import React, { createContext, useEffect, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, signOut, updateProfile } from 'firebase/auth';
 import app from '../Firebase/firbase.config';
 
 export const DuberContext = createContext();
@@ -19,12 +19,18 @@ const ContextProvider = ({ children }) => {
     };
     // user login 
 
+    const userLogout = () => {
+        return signOut(auth)
+    };
+    // user logout 
+
     const updateUser = (name) => {
         return updateProfile(auth.currentUser, {
             photoURL: '',
             displayName: name
         })
-    }
+    };
+    // update user 
 
     useEffect(() => {
         const unsubscribe = onAuthStateChanged(auth, currentUser => {
@@ -33,7 +39,7 @@ const ContextProvider = ({ children }) => {
         return () => unsubscribe();
     }, [])
 
-    const value = { user, userRegister, userLogin, updateUser }
+    const value = { user, userRegister, userLogin, updateUser, userLogout }
     return (
         <DuberContext.Provider value={value}>
             {children}

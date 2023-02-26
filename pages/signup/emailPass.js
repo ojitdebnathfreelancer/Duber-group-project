@@ -8,8 +8,9 @@ import { TiTick } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
 
 const EmailPass = () => {
-  const { userRegister, updateUser } = useContext(DuberContext);
-
+  const { userRegister, user, updateUser } = useContext(DuberContext);
+  const [loading, setLoading] = useState(false)
+  const [inputPassword, setInputPassword] = useState("")
   const dispatch = useDispatch();
   const route = useRouter();
 
@@ -20,18 +21,24 @@ const EmailPass = () => {
   const fullName = firstName + ' ' + lastName;
 
   const handelSignup = () => {
+    setLoading(true)
     userRegister(email, password)
       .then(result => {
         console.log(result.user);
         userUpdate(fullName)
-        route.push("/about")
+        setLoading(false)
       })
-      .catch(error => console.log(error))
+      .catch(error => {
+        setLoading(false)
+        console.log(error)
+      })
   };
 
   const userUpdate = (name) => {
     updateUser(name)
-      .then(() => { })
+      .then(() => {
+        route.push("/signup/drive/thankyou")
+      })
       .catch(error => console.log(error))
   }
 
@@ -72,18 +79,19 @@ const EmailPass = () => {
   }
 
 
-
-
   return (
     <div className="md:w-[360px] lg:h-[90vh] h-auto mx-auto w-full flex justify-center items-center px-3 md:pt-0 pt-2">
       <div>
         <div>
-          <h2 className="text-[24px] leading-[30px] py-2">Enter your mobile number</h2>
+          <h2 className="text-[24px] leading-[30px] py-2">Enter your password</h2>
           <p>Your passwords must be at least 8 characters long, and contain at least one letter and one digit</p>
         </div>
         <div className="relative py-7">
           <input
-            onChange={(e) => dispatch(Password(e.target.value))}
+            onChange={(e) => {
+              dispatch(Password(e.target.value))
+              setInputPassword(e.target.value)
+            }}
             onKeyUp={handleOnkeyUp}
             onFocus={handleOnFocus}
             onBlur={handleOnBlur}
@@ -130,18 +138,18 @@ const EmailPass = () => {
               </>
           }
           {
-            checks.oneDigit ?
+            checks.oneLetter ?
               <>
                 <p className="flex items-center gap-3">
                   <TiTick className="bg-green-600 text-white rounded-full" />
-                  Has one digit?
+                  Has one uppercase letter?
                 </p>
               </>
               :
               <>
                 <p className="flex items-center gap-3">
                   <TiTick className="bg-red-600 text-white rounded-full" />
-                  Has one digit?
+                  Has one uppercase letter?
                 </p>
               </>
           }
@@ -150,14 +158,14 @@ const EmailPass = () => {
               <>
                 <p className="flex items-center gap-3">
                   <TiTick className="bg-green-600 text-white rounded-full" />
-                  Has one letter?
+                  Has one digit?
                 </p>
               </>
               :
               <>
                 <p className="flex items-center gap-3">
                   <TiTick className="bg-red-600 text-white rounded-full" />
-                  Has one letter?
+                  Has one digit?
                 </p>
               </>
           }
@@ -169,9 +177,17 @@ const EmailPass = () => {
             className="w-12 h-12 rounded-full bg-gray-200 flex items-center justify-center hover:cursor-pointer hover:bg-gray-300 hover:bg-opacity-80 transition ease-in-out duration-500 ">
             <BiLeftArrowAlt className="text-3xl" />
           </div>
-          <div className="w-[100px] h-12 px-4 rounded-full bg-gray-900 flex items-center justify-center hover:cursor-pointer hover:bg-gray-900 hover:bg-opacity-90 text-white transition ease-in-out duration-500">
-            <button onClick={() => handelSignup()} className="flex items-center justify-center gap-2">
-              <span>Submit</span>
+          <div className="">
+            <button
+              disabled={!inputPassword.length && checks.lesThenEightCharacter && checks.oneDigit && checks.oneLetter
+              }
+              onClick={() => handelSignup()}
+              className={`${inputPassword.length && checks.lesThenEightCharacter && checks.oneDigit && checks.oneLetter ? "bg-gray-900 hover:bg-gray-900 hover:cursor-pointer text-white" : "bg-gray-100 text-gray-800 cursor-not-allowed"} px-4 py-2.5 rounded-full flex items-center justify-center gap-2 hover:bg-opacity-90 transition ease-in-out duration-500 `}
+
+            >
+              <span>
+                {loading ? "Loading..." : "Submit"}
+              </span>
               {/* <BiRightArrowAlt className="text-3xl" /> */}
             </button>
           </div>

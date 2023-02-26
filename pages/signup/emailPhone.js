@@ -1,11 +1,13 @@
 import { Email } from "@/redux/slies/signupSlice";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { useDispatch } from "react-redux";
 
 
 const EmailPhone = () => {
+  const [email, setEmail] = useState("")
+
   const dispatch = useDispatch();
   const router = useRouter()
 
@@ -27,6 +29,7 @@ const EmailPhone = () => {
         <div className="">
           <div className="py-6">
             <input
+              onChange={(e) => setEmail(e.target.value)}
               onBlur={(e) => dispatch(Email(e.target.value))}
               className="w-full py-2.5 bg-gray-200 bg-opacity-50 px-4 rounded-lg border focus:outline-none focus:border-gray-900 focus:bg-gray-100 focus:bg-opacity-70"
               type="email"
@@ -45,8 +48,10 @@ const EmailPhone = () => {
           </div>
           <div className="">
             <button
+              disabled={!email.length}
               onClick={handleNavigate}
-              className="px-4 py-2.5 rounded-full bg-gray-900 flex items-center justify-center gap-2 hover:cursor-pointer hover:bg-gray-900 hover:bg-opacity-90 text-white transition ease-in-out duration-500 ">
+              className={`${email.length ? "bg-gray-900 hover:bg-gray-900 hover:cursor-pointer text-white" : "bg-gray-100 text-gray-800 cursor-not-allowed"} px-4 py-2.5 rounded-full flex items-center justify-center gap-2 hover:bg-opacity-90 transition ease-in-out duration-500 `}
+              >
               <span>Next</span>
               <BiRightArrowAlt className="text-3xl" />
             </button>

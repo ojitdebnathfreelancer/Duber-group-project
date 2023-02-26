@@ -8,22 +8,15 @@ import { DuberContext } from "@/ContextProvider/ContextProvider";
 import { useSelector } from "react-redux";
 
 const Navigation = () => {
-  const { user, userLogin } = useContext(DuberContext);
+  const { user, userLogout } = useContext(DuberContext);
   const [open, setOpen] = useState(false);
-  const { email, password } = useSelector(state => state.signup);
-
-  const loginUser = () => {
-    userLogin(email, password)
-      .then(() => { })
-      .catch(error => console.log(error))
-  }
 
   const menuItems = (
     <>
       <li className="mr-5 flex items-center">
         <Link
           className="hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150"
-          href="/about"
+          href="/companies"
         >
           Company
         </Link>
@@ -66,21 +59,31 @@ const Navigation = () => {
           <Link href='/Proudacts/Products' className="lg:mr-5 mr-4 text-[16px] lg:block hidden hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
             Transports
           </Link>
-          <Link href='/Dashboard/Dasboard/Dasboard'>Dashboard</Link>
-          <Link href='/signin/signin'>
-            <button className="lg:mr-5 mr-2 text-[16px] hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
-              Login
-            </button>
-          </Link>
-          <button className="lg:mr-5 mr-2 text-[16px] hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
-            Logout
-          </button>
-          <Link href='/signup/signup'>
-            <button className="lg:mr-5 mr-4 bg-white text-black rounded-2xl lg:px-3 px-2 py-1 font-semibold duration-150">
-              Sign Up
-            </button>
-          </Link>
-          <span>{user?.displayName}</span>
+          {
+            user?.uid ?
+              <>
+                <Link className="lg:mr-5 mr-2" href='/Dashboard/Dasboard/Dasboard'>Dashboard</Link>
+                < button onClick={() => userLogout()} className="lg:mr-5 mr-2 text-[16px] hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
+                  Logout
+                </button>
+                <span title="profile">{user?.displayName}</span>
+              </>
+              :
+              <>
+                <Link href='/signin/signin'>
+                  <button className="lg:mr-5 mr-2 text-[16px] hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
+                    Login
+                  </button>
+                </Link>
+
+                <Link href='/signup/signup'>
+                  <button className="lg:mr-5 mr-4 bg-white text-black rounded-2xl lg:px-3 px-2 py-1 font-semibold duration-150">
+                    Sign Up
+                  </button>
+                </Link>
+              </>
+
+          }
           <button
             onClick={() => setOpen(!open)}
             className="hover:bg-[#333333] p-2 rounded-[50%] duration-150 text-white font-bold lg:hidden block"
@@ -112,7 +115,7 @@ const Navigation = () => {
           </button>
         </div>
       </div>
-    </div>
+    </div >
   );
 };
 
