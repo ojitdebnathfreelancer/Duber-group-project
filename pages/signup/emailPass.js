@@ -1,12 +1,32 @@
+import { DuberContext } from "@/ContextProvider/ContextProvider";
+import { Password } from "@/redux/slies/signupSlice";
 import { useRouter } from "next/router";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { TiTick } from "react-icons/ti";
+import { useDispatch, useSelector } from "react-redux";
 
 const EmailPass = () => {
+  const { userRegister } = useContext(DuberContext);
+
+  const dispatch = useDispatch();
+  const route = useRouter();
+
   const [changePassword, setChangePassword] = useState(true);
   const changeIcon = changePassword === true ? false : true;
+
+  const { firstName, lastName, email, password, role } = useSelector(state => state.signup);
+  const fullName = firstName + ' ' + lastName;
+
+  const handelSignup = () => {
+    userRegister(email, password)
+      .then(result => {
+        console.log(result.user)
+        route.push("/about")
+      })
+      .catch(error => console.log(error))
+  };
 
   /* For password validation */
   const [checks, setChecks] = useState({
@@ -54,6 +74,7 @@ const EmailPass = () => {
         </div>
         <div className="relative py-7">
           <input
+            onChange={(e) => dispatch(Password(e.target.value))}
             onKeyUp={handleOnkeyUp}
             onFocus={handleOnFocus}
             onBlur={handleOnBlur}
@@ -140,7 +161,7 @@ const EmailPass = () => {
             <BiLeftArrowAlt className="text-3xl" />
           </div>
           <div className="w-[100px] h-12 px-4 rounded-full bg-gray-900 flex items-center justify-center hover:cursor-pointer hover:bg-gray-900 hover:bg-opacity-90 text-white transition ease-in-out duration-500">
-            <button type="submit" className="flex items-center justify-center gap-2">
+            <button onClick={() => handelSignup()} className="flex items-center justify-center gap-2">
               <span>Submit</span>
               {/* <BiRightArrowAlt className="text-3xl" /> */}
             </button>

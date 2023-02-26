@@ -1,9 +1,13 @@
+import { FirstName, LastName } from "@/redux/slies/signupSlice";
 import { useRouter } from "next/router";
-import React from "react";
+import React, { useState } from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
 
 const Signup = () => {
-
+  const dispatch = useDispatch();
+  const [firstname, setFirestname] = useState('');
+  const [lastname, setLastname] = useState('');
 
   const router = useRouter()
 
@@ -22,6 +26,11 @@ const Signup = () => {
         <div className="pt-6">
           <div className="py-1">
             <input
+              onChange={(e) => setFirestname(e.target.value)}
+              onBlur={(e) => {
+                dispatch(FirstName(e.target.value))
+
+              }}
               className="w-full py-2.5 bg-gray-200 bg-opacity-50 px-4 rounded-lg border focus:outline-none focus:border-gray-900 focus:bg-gray-100 focus:bg-opacity-70"
               type="text"
               name=""
@@ -32,6 +41,10 @@ const Signup = () => {
           </div>
           <div className="py-1">
             <input
+              onChange={(e) => setLastname(e.target.value)}
+              onBlur={(e) => {
+                dispatch(LastName(e.target.value))
+              }}
               className="w-full py-2.5 bg-gray-200 bg-opacity-50 px-4 rounded-lg border focus:outline-none focus:border-gray-900 focus:bg-gray-100 focus:bg-opacity-70"
               type="text"
               name=""
@@ -45,8 +58,9 @@ const Signup = () => {
           <div></div>
           <div className="">
             <button
+              disabled={!firstname.length && !lastname.length}
               onClick={handleNavigate}
-              className="px-4 py-2.5 rounded-full bg-gray-900 flex items-center justify-center gap-2 hover:cursor-pointer hover:bg-gray-900 hover:bg-opacity-90 text-white transition ease-in-out duration-500 ml-[56px]">
+              className={`px-4 py-2.5 rounded-full ${firstname.length && lastname.length ? "bg-gray-900 hover:bg-gray-800 hover:cursor-pointer " : "bg-gray-100 text-gray-800 cursor-not-allowed"} flex items-center justify-center gap-2 hover:bg-opacity-90 text-white transition ease-in-out duration-500 ml-[56px]`}>
               <span>Next</span>
               <BiRightArrowAlt className="text-3xl" />
             </button>

@@ -1,10 +1,13 @@
+import { Email } from "@/redux/slies/signupSlice";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 
 const Signin = () => {
   const [emailOrNumber, setEmailOrNumber] = useState("")
 
+  const dispatch = useDispatch();
   const router = useRouter()
 
   const handleRouting = (e) => {
@@ -18,7 +21,10 @@ const Signin = () => {
       <h2 className="text-[24px] leading-[30px]">What is your phone number or email?</h2>
       <div className="py-3">
         <input
-          onChange={(e) => setEmailOrNumber(e.target.value)}
+          onChange={(e) => {
+            setEmailOrNumber(e.target.value)
+            dispatch(Email(e.target.value))
+          }}
           className="w-full py-2.5 bg-gray-200 bg-opacity-50 px-4 rounded-lg border focus:outline-none focus:border-gray-900 focus:bg-gray-100 focus:bg-opacity-70"
           type="email"
           name=""
