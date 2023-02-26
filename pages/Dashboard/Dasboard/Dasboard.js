@@ -1,3 +1,4 @@
+import Link from "next/link";
 import { useState } from "react";
 import { IoIosArrowBack } from "react-icons/io";
 import { MdDashboardCustomize } from "react-icons/md";
@@ -33,10 +34,12 @@ const Dashboard = () => {
                 <ul className="pt-6 grid gap-x-4">
 
                     <li className="flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-3 text-black">
-                        <RiDashboardLine className=" w-5 h-5"></RiDashboardLine>
-                        <span className={`${!open && "hidden"} origin-left duration-200`}>
-                            Dashboard
-                        </span>
+                        <Link href='/Dashboard/AddTransport/AddTransport'>
+                            <RiDashboardLine className=" w-5 h-5"></RiDashboardLine>
+                            <span className={`${!open && "hidden"} origin-left duration-200`}>
+                                Add Transport
+                            </span>
+                        </Link>
                     </li>
 
                     <li className="flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-3 text-black">
