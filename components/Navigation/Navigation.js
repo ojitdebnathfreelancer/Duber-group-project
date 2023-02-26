@@ -5,10 +5,18 @@ import { RxCross2 } from "react-icons/rx";
 import { BsGlobe2 } from "react-icons/bs";
 import styles from "./Navigation.module.css";
 import { DuberContext } from "@/ContextProvider/ContextProvider";
+import { useSelector } from "react-redux";
 
 const Navigation = () => {
-  const { user } = useContext(DuberContext);
+  const { user, userLogin } = useContext(DuberContext);
   const [open, setOpen] = useState(false);
+  const { email, password } = useSelector(state => state.signup);
+
+  const loginUser = () => {
+    userLogin(email, password)
+      .then(() => { })
+      .catch(error => console.log(error))
+  }
 
   const menuItems = (
     <>

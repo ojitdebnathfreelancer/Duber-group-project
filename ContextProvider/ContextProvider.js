@@ -1,5 +1,5 @@
-import React, { createContext, useState } from 'react';
-import { createUserWithEmailAndPassword, getAuth } from 'firebase/auth';
+import React, { createContext, useEffect, useState } from 'react';
+import { createUserWithEmailAndPassword, getAuth, onAuthStateChanged, signInWithEmailAndPassword, updateProfile } from 'firebase/auth';
 import app from '../Firebase/firbase.config';
 
 export const DuberContext = createContext();
@@ -7,14 +7,33 @@ export const DuberContext = createContext();
 const auth = getAuth(app);
 
 const ContextProvider = ({ children }) => {
-    const [user, setUser] = useState({ name: 'ojit' });
+    const [user, setUser] = useState({});
 
     const userRegister = (email, password) => {
         return createUserWithEmailAndPassword(auth, email, password)
     };
     // user register 
 
-    const value = { user, userRegister }
+    const userLogin = (email, password) => {
+        return signInWithEmailAndPassword(auth, email, password)
+    };
+    // user login 
+
+    const updateUser = (name) => {
+        return updateProfile(auth.currentUser, {
+            photoURL: '',
+            displayName: name
+        })
+    }
+
+    useEffect(() => {
+        const unsubscribe = onAuthStateChanged(auth, currentUser => {
+            setUser(currentUser);
+        });
+        return () => unsubscribe();
+    }, [])
+
+    const value = { user, userRegister, userLogin, updateUser }
     return (
         <DuberContext.Provider value={value}>
             {children}

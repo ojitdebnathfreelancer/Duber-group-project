@@ -8,7 +8,7 @@ import { TiTick } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
 
 const EmailPass = () => {
-  const { userRegister } = useContext(DuberContext);
+  const { userRegister, updateUser } = useContext(DuberContext);
 
   const dispatch = useDispatch();
   const route = useRouter();
@@ -22,11 +22,18 @@ const EmailPass = () => {
   const handelSignup = () => {
     userRegister(email, password)
       .then(result => {
-        console.log(result.user)
+        console.log(result.user);
+        userUpdate(fullName)
         route.push("/about")
       })
       .catch(error => console.log(error))
   };
+
+  const userUpdate = (name) => {
+    updateUser(name)
+      .then(() => { })
+      .catch(error => console.log(error))
+  }
 
   /* For password validation */
   const [checks, setChecks] = useState({
