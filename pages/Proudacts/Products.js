@@ -1,13 +1,17 @@
 import React, { useRef, useState } from 'react';
+import { AiOutlineFileSearch } from 'react-icons/ai';
 import { GrFormClose } from 'react-icons/gr';
 import { TiLocationArrow } from 'react-icons/ti';
+import { FcSearch } from 'react-icons/fc';
 import styles from "./Products.module.css"
+import { IoCarSportOutline } from 'react-icons/io5';
 
 
 const Products = () => {
     const [location, setLocation] = useState("")
     const [destination, setDestination] = useState("")
-
+    const [search, setSearch] = useState("")
+    console.log(search);
 
     const locationRef = useRef(null);
     const locationOnButtonClick = () => {
@@ -19,6 +23,7 @@ const Products = () => {
         destinationRef.current.value = "";
 
     };
+
 
     return (
         <>
@@ -96,12 +101,92 @@ const Products = () => {
                 </div>
             </div>
 
-            <div className='grid '>
-                <div className=' w-[600px] p-2 h-12  text-sm rounded-md  mx-auto grid'>
-                    <input type="search" name="" className='pl-6 border-2' id="" />
-                </div>
-                <button className='mx-auto'>Search</button>
+            <div className="mx-auto mb-6 max-w-lg grid sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-2 gap-4">
+                <form action="" className="relative mx-auto w-max">
+                    <input type="search"
+                        onChange={(e) => setSearch(e.target.value)}
+                        className="peer cursor-pointer relative z-10 h-12 w-12 rounded-full border bg-transparent pl-12 outline-none focus:w-full focus:cursor-text focus:border-lime-400 focus:pl-16 focus:pr-4" />
+                    <AiOutlineFileSearch className='absolute inset-y-0 my-auto h-8 w-12 border-r border-transparent stroke-gray-500 px-3.5 peer-focus:border-lime-300 peer-focus:stroke-lime-500'></AiOutlineFileSearch>
+                </form>
+                <button className="mx-auto relative mb-6 md:mb-0 lg:mb-0 group overflow-hidden px-6 w-28 h-12 rounded-full flex space-x-2 items-center bg-gradient-to-r from-pink-500 to-purple-500 hover:to-purple-600">
+                    <span className="relative text-sm text-white">Search</span>
+                    <div className="flex items-center -space-x-3 translate-x-3">
+                        <FcSearch className='h-5 w-5 stroke-white -translate-x-2 transition duration-300 group-hover:translate-x-0'></FcSearch>
+                    </div>
+                </button>
             </div>
+
+            <div className=' bg-slate-200 mt-10 mb-10 p-10'>
+
+                <div className="grid lg:max-w-7xl md:max-w-md gap-4 md:grid-cols-2 lg:grid-cols-3 mx-auto">
+                    {/* <!-- Card Starts Here --> */}
+                    <div className="max-w-md  rounded-xl bg-white shadow-lg">
+                        <div className="p-8">
+                            <img src="https://i.ibb.co/RgnhN32/undraw-compose-music-ovo2.png" alt="" />
+                        </div>
+
+                        <div className="flex flex-col items-center gap-6 p-8">
+                            <h3 className=" text-sm md:text-[16px] lg:text-2xl  font-bold text-slate-800">Vehical Information</h3>
+                            <p className="px-8 text-center text-sm text-slate-600">You can now listen to millions of songs, audiobooks and podcasts on any device anywhere you like!</p>
+
+                            <div className="flex w-full items-center justify-center gap-3 rounded-lg bg-slate-50 p-4">
+                                <div className="rounded-full bg-slate-200 p-3">
+                                    <IoCarSportOutline className='h-6 w-6 fill-slate-300'></IoCarSportOutline>
+                                </div>
+                                <div>
+                                    <span className="text-sm text-slate-600">$59.99</span>
+                                </div>
+                            </div>
+                            <button className="mt-3 w-full rounded-lg bg-blue-700 p-3 text-sm font-semibold text-white shadow-xl shadow-blue-700/30 outline-none transition-transform hover:scale-105 hover:bg-blue-600 focus:scale-105 focus:bg-blue-600 focus:ring-2">Proceed to Booking</button>
+                        </div>
+                    </div>
+                    {/* <!-- Card Starts Here --> */}
+                    <div className="max-w-md rounded-xl bg-white shadow-lg">
+                        <div className="p-8">
+                            <img src="https://i.ibb.co/RgnhN32/undraw-compose-music-ovo2.png" alt="" />
+                        </div>
+
+                        <div className="flex flex-col items-center gap-6 p-8">
+                            <h3 className="text-sm md:text-[16px] lg:text-2xl font-bold text-slate-800">Vehical Information</h3>
+                            <p className="px-8 text-center text-sm text-slate-600">You can now listen to millions of songs, audiobooks and podcasts on any device anywhere you like!</p>
+
+                            <div className="flex w-full items-center justify-center gap-3 rounded-lg bg-slate-50 p-4">
+                                <div className="rounded-full bg-slate-200 p-3">
+                                    <IoCarSportOutline className='h-6 w-6 fill-slate-300'></IoCarSportOutline>
+                                </div>
+                                <div>
+                                    <span className="text-sm text-slate-600">$59.99</span>
+                                </div>
+                            </div>
+                            <button className="mt-3 w-full rounded-lg bg-blue-700 p-3 text-sm font-semibold text-white shadow-xl shadow-blue-700/30 outline-none transition-transform hover:scale-105 hover:bg-blue-600 focus:scale-105 focus:bg-blue-600 focus:ring-2">Proceed to Booking</button>
+                        </div>
+                    </div>
+                    {/* <!-- Card Starts Here --> */}
+                    <div className="max-w-md rounded-xl bg-white shadow-lg">
+                        <div className="p-8">
+                            <img src="https://i.ibb.co/RgnhN32/undraw-compose-music-ovo2.png" alt="" />
+                        </div>
+
+                        <div className="flex flex-col items-center gap-6 p-8">
+                            <h3 className="text-sm md:text-[16px] lg:text-2xl font-bold text-slate-800">Vehical Information</h3>
+                            <p className="px-8 text-center text-sm text-slate-600">You can now listen to millions of songs, audiobooks and podcasts on any device anywhere you like!</p>
+
+                            <div className="flex w-full items-center justify-center gap-3 rounded-lg bg-slate-50 p-4">
+                                <div className="rounded-full bg-slate-200 p-3">
+                                    <IoCarSportOutline className='h-6 w-6 fill-slate-300'></IoCarSportOutline>
+                                </div>
+                                <div>
+                                    <span className="text-sm text-slate-600">$59.99</span>
+                                </div>
+                            </div>
+                            <button className="mt-3 w-full rounded-lg bg-blue-700 p-3 text-sm font-semibold text-white shadow-xl shadow-blue-700/30 outline-none transition-transform hover:scale-105 hover:bg-blue-600 focus:scale-105 focus:bg-blue-600 focus:ring-2">Proceed to Booking</button>
+                        </div>
+                    </div>
+                </div>
+                <button className="mt-8 w-48 grid mx-auto rounded-lg bg-blue-700 p-3 text-sm font-semibold text-white shadow-xl shadow-blue-700/30 outline-none transition-transform hover:scale-105 hover:bg-blue-600 focus:scale-105 focus:bg-blue-600 focus:ring-2">See More</button>
+            </div>
+
+
 
         </>
     )
