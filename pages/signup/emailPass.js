@@ -45,13 +45,11 @@ const EmailPass = () => {
   }
 
 
-
-
   return (
     <div className="md:w-[360px] lg:h-[90vh] h-auto mx-auto w-full flex justify-center items-center px-3 md:pt-0 pt-2">
       <div>
         <div>
-          <h2 className="text-[24px] leading-[30px] py-2">Enter your mobile number</h2>
+          <h2 className="text-[24px] leading-[30px] py-2">Enter your password</h2>
           <p>Your passwords must be at least 8 characters long, and contain at least one letter and one digit</p>
         </div>
         <div className="relative py-7">
