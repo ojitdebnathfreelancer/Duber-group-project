@@ -3,10 +3,12 @@ import { Role } from "@/redux/slies/signupSlice";
 import { useRouter } from "next/router";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
 import { useDispatch } from "react-redux";
+import React, { useState } from "react";
 
 const roleSelection = () => {
     const dispatch = useDispatch();
     const router = useRouter()
+    const [roleSelection, setRoleSelection] = useState("")
 
     const handlePreview = (e) => {
         e.preventDefault()
@@ -27,13 +29,30 @@ const roleSelection = () => {
                     <div className="py-6">
                         <div className="flex items-center gap-3">
                             <div className="flex gap-2 items-center">
-                                <input onClick={(e) => dispatch(Role(e.target.value))} type="radio" name="role" value="company" />
-                                <label>Company</label>
+                                <input
+                                    onClick={(e) => {
+                                        dispatch(Role(e.target.value))
+                                        setRoleSelection(e.target.value)
+                                    }} type="radio"
+                                    name="role"
+                                    value="company"
+                                    id="company"
+                                />
+                                <label htmlFor="company">Company</label>
                             </div>
 
                             <div className="flex gap-2 items-center">
-                                <input onClick={(e) => dispatch(Role(e.target.value))} type="radio" name="role" value="passenger" />
-                                <label>Passenger</label>
+                                <input
+                                    onClick={(e) => {
+                                        dispatch(Role(e.target.value))
+                                        setRoleSelection(e.target.value)
+                                    }}
+                                    type="radio"
+                                    name="role"
+                                    value="passenger"
+                                    id="passenger"
+                                />
+                                <label htmlFor="passenger">Passenger</label>
                             </div>
                         </div>
                     </div>
@@ -46,15 +65,17 @@ const roleSelection = () => {
                     </div>
                     <div className="">
                         <button
+                            disabled={!roleSelection}
                             onClick={handleNavigate}
-                            className="px-4 py-2.5 rounded-full bg-gray-900 flex items-center justify-center gap-2 hover:cursor-pointer hover:bg-gray-900 hover:bg-opacity-90 text-white transition ease-in-out duration-500 ">
+                            className={`${roleSelection ? "bg-gray-900 hover:bg-gray-900 hover:cursor-pointer text-white" : "bg-gray-100 text-gray-800 cursor-not-allowed"} px-4 py-2.5 rounded-full flex items-center justify-center gap-2 hover:bg-opacity-90 transition ease-in-out duration-500 `}
+                        >
                             <span>Next</span>
                             <BiRightArrowAlt className="text-3xl" />
                         </button>
                     </div>
                 </div>
             </div>
-        </div>
+        </div >
     );
 };
 
