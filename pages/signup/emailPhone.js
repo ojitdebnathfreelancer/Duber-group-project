@@ -1,9 +1,12 @@
+import { Email } from "@/redux/slies/signupSlice";
 import { useRouter } from "next/router";
 import React from "react";
 import { BiLeftArrowAlt, BiRightArrowAlt } from "react-icons/bi";
+import { useDispatch } from "react-redux";
 
 
 const EmailPhone = () => {
+  const dispatch = useDispatch();
   const router = useRouter()
 
   const handlePreview = (e) => {
@@ -24,6 +27,7 @@ const EmailPhone = () => {
         <div className="">
           <div className="py-6">
             <input
+              onBlur={(e) => dispatch(Email(e.target.value))}
               className="w-full py-2.5 bg-gray-200 bg-opacity-50 px-4 rounded-lg border focus:outline-none focus:border-gray-900 focus:bg-gray-100 focus:bg-opacity-70"
               type="email"
               name=""

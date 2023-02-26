@@ -1,11 +1,13 @@
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useContext, useState } from "react";
 import { HiBars2 } from "react-icons/hi2";
 import { RxCross2 } from "react-icons/rx";
 import { BsGlobe2 } from "react-icons/bs";
 import styles from "./Navigation.module.css";
+import { DuberContext } from "@/ContextProvider/ContextProvider";
 
 const Navigation = () => {
+  const { user } = useContext(DuberContext);
   const [open, setOpen] = useState(false);
 
   const menuItems = (
@@ -61,11 +63,15 @@ const Navigation = () => {
               Login
             </button>
           </Link>
+          <button className="lg:mr-5 mr-2 text-[16px] hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
+            Logout
+          </button>
           <Link href='/signup/signup'>
             <button className="lg:mr-5 mr-4 bg-white text-black rounded-2xl lg:px-3 px-2 py-1 font-semibold duration-150">
               Sign Up
             </button>
           </Link>
+          <span>{user?.displayName}</span>
           <button
             onClick={() => setOpen(!open)}
             className="hover:bg-[#333333] p-2 rounded-[50%] duration-150 text-white font-bold lg:hidden block"

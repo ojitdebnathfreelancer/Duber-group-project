@@ -1,9 +1,11 @@
+import { FirstName, LastName } from "@/redux/slies/signupSlice";
 import { useRouter } from "next/router";
 import React from "react";
 import { BiRightArrowAlt } from "react-icons/bi";
+import { useDispatch, useSelector } from "react-redux";
 
 const Signup = () => {
-
+  const dispatch = useDispatch();
 
   const router = useRouter()
 
@@ -22,6 +24,7 @@ const Signup = () => {
         <div className="pt-6">
           <div className="py-1">
             <input
+              onBlur={(e) => dispatch(FirstName(e.target.value))}
               className="w-full py-2.5 bg-gray-200 bg-opacity-50 px-4 rounded-lg border focus:outline-none focus:border-gray-900 focus:bg-gray-100 focus:bg-opacity-70"
               type="text"
               name=""
@@ -32,6 +35,7 @@ const Signup = () => {
           </div>
           <div className="py-1">
             <input
+              onBlur={(e) => dispatch(LastName(e.target.value))}
               className="w-full py-2.5 bg-gray-200 bg-opacity-50 px-4 rounded-lg border focus:outline-none focus:border-gray-900 focus:bg-gray-100 focus:bg-opacity-70"
               type="text"
               name=""
