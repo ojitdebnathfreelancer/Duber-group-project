@@ -12,7 +12,7 @@ const Signin = () => {
 
   const handleRouting = (e) => {
     e.preventDefault()
-    router.push("/signup/loginPassword")
+    router.push("/signup/LoginPassword")
   }
 
 

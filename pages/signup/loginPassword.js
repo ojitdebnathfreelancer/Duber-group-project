@@ -7,8 +7,8 @@ import { AiFillEye, AiFillEyeInvisible } from "react-icons/ai";
 import { TiTick } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
 
-const loginPassword = () => {
-    const { userRegister } = useContext(DuberContext);
+const LoginPassword = () => {
+    const { userLogin } = useContext(DuberContext);
     const [loading, setLoading] = useState(false)
     const [inputPassword, setInputPassword] = useState("")
     const dispatch = useDispatch();
@@ -22,11 +22,11 @@ const loginPassword = () => {
 
     const handelSignup = () => {
         setLoading(true)
-        userRegister(email, password)
+        userLogin(email, password)
             .then(result => {
                 console.log(result.user)
                 setLoading(false)
-                route.push("/signup/drive/thankyou")
+                route.push("/")
             })
             .catch(error => {
                 setLoading(false)
@@ -174,4 +174,4 @@ const loginPassword = () => {
     );
 };
 
-export default loginPassword;
+export default LoginPassword;
