@@ -60,7 +60,7 @@ const Signup = () => {
             <button
               disabled={!firstname.length && !lastname.length}
               onClick={handleNavigate}
-              className={`px-4 py-2.5 rounded-full ${firstname.length && lastname.length ? "bg-gray-900 hover:bg-gray-800 hover:cursor-pointer " : "bg-gray-100 text-gray-800 cursor-not-allowed"} flex items-center justify-center gap-2 hover:bg-opacity-90 text-white transition ease-in-out duration-500 ml-[56px]`}>
+              className={`px-4 py-2.5 rounded-full ${firstname.length && lastname.length ? "bg-gray-900 hover:bg-gray-800 hover:cursor-pointer text-white" : "bg-gray-100 text-gray-800 cursor-not-allowed"} flex items-center justify-center gap-2 hover:bg-opacity-90 transition ease-in-out duration-500 ml-[56px]`}>
               <span>Next</span>
               <BiRightArrowAlt className="text-3xl" />
             </button>
