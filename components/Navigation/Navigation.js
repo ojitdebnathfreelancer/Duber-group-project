@@ -56,8 +56,9 @@ const Navigation = () => {
             EN
           </button>
           <Link href='/Proudacts/Products' className="lg:mr-5 mr-4 text-[16px] lg:block hidden hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
-            Products
+            Transports
           </Link>
+          <Link href='/Dashboard/Dasboard/Dasboard'>Dashboard</Link>
           <Link href='/signin/signin'>
             <button className="lg:mr-5 mr-2 text-[16px] hover:bg-[#333333] px-4 py-2 rounded-2xl duration-150">
               Login
