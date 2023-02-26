@@ -8,7 +8,7 @@ import { TiTick } from "react-icons/ti";
 import { useDispatch, useSelector } from "react-redux";
 
 const EmailPass = () => {
-  const { userRegister, user } = useContext(DuberContext);
+  const { userRegister, user, updateUser } = useContext(DuberContext);
   const [loading, setLoading] = useState(false)
   const [inputPassword, setInputPassword] = useState("")
   const dispatch = useDispatch();
@@ -24,15 +24,23 @@ const EmailPass = () => {
     setLoading(true)
     userRegister(email, password)
       .then(result => {
-        console.log(result.user)
+        console.log(result.user);
+        userUpdate(fullName)
         setLoading(false)
-        route.push("/signup/drive/thankyou")
       })
       .catch(error => {
         setLoading(false)
         console.log(error)
       })
   };
+
+  const userUpdate = (name) => {
+    updateUser(name)
+      .then(() => {
+        route.push("/signup/drive/thankyou")
+      })
+      .catch(error => console.log(error))
+  }
 
   /* For password validation */
   const [checks, setChecks] = useState({
