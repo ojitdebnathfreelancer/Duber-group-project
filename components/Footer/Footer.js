@@ -86,7 +86,7 @@ const Footer = () => {
 
             <span className=" flex items-center mt-[52px] gap-2">
               <IoLocateSharp></IoLocateSharp>
-              <span>Dhaka, Bangladesh</span>
+              <span>Dhaka,Bangladesh</span>
             </span>
           </div>
           {/* <div className=" flex gap-3  mt-[35px]">

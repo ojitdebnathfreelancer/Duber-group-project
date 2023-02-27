@@ -8,9 +8,10 @@ import { RxAvatar } from "react-icons/rx";
 import { SiInstructables } from "react-icons/si";
 import { IoLogOutOutline } from "react-icons/io5";
 import { TbDoorExit } from "react-icons/tb";
+import Link from "next/link";
 
 
-const Dashboard = () => {
+const Dashboard = ({ children }) => {
     const [open, setOpen] = useState(true);
 
     return (
@@ -46,9 +47,9 @@ const Dashboard = () => {
                     </li>
                     <li className="flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-3 text-black">
                         <DiProlog className=" w-5 h-5"></DiProlog>
-                        <span className={`${!open && "hidden"} origin-left duration-200`}>
+                        <Link href='/Dashboard/AddTransport/AddTransport' className={`${!open && "hidden"} origin-left duration-200`}>
                             Add Product
-                        </span>
+                        </Link>
                     </li>
                     <li className="flex  rounded-md p-2 cursor-pointer hover:bg-light-white text-sm items-center gap-x-3 text-black">
                         <VscGitPullRequestCreate className=" w-5 h-5"></VscGitPullRequestCreate>
@@ -78,7 +79,7 @@ const Dashboard = () => {
                 </ul>
             </div>
             <div className=" h-screen flex-1 p-7">
-                <h1 className="text-2xl font-semibold ">Content</h1>
+                {children}
             </div>
         </div>
     );
