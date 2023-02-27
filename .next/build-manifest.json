@@ -20,6 +20,16 @@
       "static/chunks/main.js",
       "static/chunks/pages/Dashboard/AddTransport/AddTransport.js"
     ],
+    "/Dashboard/Dasboard/Dasboard": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Dashboard/Dasboard/Dasboard.js"
+    ],
+    "/Proudacts/Products": [
+      "static/chunks/webpack.js",
+      "static/chunks/main.js",
+      "static/chunks/pages/Proudacts/Products.js"
+    ],
     "/_app": [
       "static/chunks/webpack.js",
       "static/chunks/main.js",

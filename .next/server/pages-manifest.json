@@ -2,5 +2,7 @@
   "/_app": "pages/_app.js",
   "/_error": "pages/_error.js",
   "/_document": "pages/_document.js",
-  "/Dashboard/AddTransport/AddTransport": "pages/Dashboard/AddTransport/AddTransport.js"
+  "/Proudacts/Products": "pages/Proudacts/Products.js",
+  "/Dashboard/AddTransport/AddTransport": "pages/Dashboard/AddTransport/AddTransport.js",
+  "/Dashboard/Dasboard/Dasboard": "pages/Dashboard/Dasboard/Dasboard.js"
 }
