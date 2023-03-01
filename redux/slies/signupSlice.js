@@ -8,6 +8,8 @@ const initialState = {
     role: '',
 }
 
+// this is initial state 
+
 const signupSlice = createSlice({
     name: 'signup',
     initialState,
